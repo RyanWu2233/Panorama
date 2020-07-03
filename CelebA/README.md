@@ -9,14 +9,14 @@ CelebFaces Attributes Dataset (CelebA) is a large-scale face attributes dataset 
 The dataset can be employed as the training and test sets for the following computer vision tasks: face attribute recognition, face detection, landmark (or facial part) localization, and face editing & synthesis.
 
 ----  
-## Fold description:
-> Align & Cropped: Normalized image with 218 x 178 resolution (face is centered)  
-> In the wild: Original unprocessed image  
+## Folder description:
+> `Align & Cropped`: Normalized image with 218 x 178 resolution (face is centered)  
+> `In the wild`: Original unprocessed image  
 
 ## File descriptions:  
-> list_attr_celeba.csv:  List for 40 binary attributes for each image  
-> list_bbox_celeba.csv:  List for bounding box  
-> list_landmarks_align_celeba.csv: List for 5 facial landmarks   
+> `list_attr_celeba.csv`:  List for 40 binary attributes for each image  
+> `list_bbox_celeba.csv`:  List for bounding box  
+> `list_landmarks_align_celeba.csv`: List for 5 facial landmarks   
 
 ----
 
