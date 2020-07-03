@@ -1,6 +1,6 @@
 ## CelebA repository introduction
 [CelebA official website](https://link.zhihu.com/?target=http%3A//mmlab.ie.cuhk.edu.hk/projects/CelebA.html)  
-![CelebA](./CelebA.png)  
+![CelebA](./celeba.png)  
 
 CelebFaces Attributes Dataset (CelebA) is a large-scale face attributes dataset with more than 200K celebrity images, each with 40 attribute annotations. The images in this dataset cover large pose variations and background clutter. CelebA has large diversities, large quantities, and rich annotations, including:  
 * 10,177 number of identities,  
