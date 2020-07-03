@@ -4,7 +4,7 @@
 ----  
 ## Content
 
-`1 GAN introduction  `
+1 GAN introduction  
 2 Loss function: GAN->fGAN->WGAN->DRAGAN  
 3 Graident penality: WGAN_GP -> R1_regularization -> PPL regularization  
 4 Generator network: GAN -> DCGAN -> Resnet -> Self_MOD -> Style_GAN -> Style_GAN2  
