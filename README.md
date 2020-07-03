@@ -4,7 +4,8 @@
 ----  
 ## Content
 1 [GAN introduction](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#gan-introduction)  
-
+2 [Generator nwtwork](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#generator-network)  
+3 [Discriminator nwtwork](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#discriminator-network)   
 
 
 
@@ -17,6 +18,11 @@
 ----  
 ## GAN introduction
 
+----
+## Generator network
+
+----
+## Discriminator network
 
 ----
 ## Loss function of GAN
