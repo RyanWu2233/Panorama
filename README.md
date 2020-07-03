@@ -3,7 +3,7 @@
 
 ----  
 ## Content
-1 GAN introduction  
+1 GAN introduction(https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#gan-introduction)  
 
 
 
