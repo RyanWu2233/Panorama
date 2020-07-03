@@ -8,6 +8,10 @@ CelebFaces Attributes Dataset (CelebA) is a large-scale face attributes dataset 
 * 5 landmark locations, 40 binary attributes annotations per image.  
 The dataset can be employed as the training and test sets for the following computer vision tasks: face attribute recognition, face detection, landmark (or facial part) localization, and face editing & synthesis.
 
+----
+## Sample images (cropped and aligned)  
+![CelebA](./celeba_align.png)  
+
 ----  
 ## Folder description:
 > `Align & Cropped`: Normalized image with 218 x 178 resolution (face is centered)  
