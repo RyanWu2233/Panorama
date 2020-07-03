@@ -23,6 +23,7 @@ GAN (Generative Adversial Network) is well known for high quality image generati
 ----  
 ## Generator network  
 4 Generator network: GAN -> DCGAN -> Resnet -> Self_MOD -> Style_GAN -> Style_GAN2  
+<summary>展开查看</summary>
 
 ----  
 ## Discriminator network  
