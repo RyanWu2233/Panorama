@@ -21,6 +21,14 @@ Sherjil Ozairz, Aaron Courville, Yoshua Bengiox, 2014
 
 ![GAN_loss](./Images/Loss_eq1.png)  
 
+# TensorFlow 2.1 code:
+> def GAN_loss(d_real, d_fake):                       #-- Loss of vanilla GAN
+>    BCE = tf.keras.losses.BinaryCrossentropy(from_logits= True)
+>    G_loss = BCE(tf.ones_like(d_fake),  d_fake)
+>    D_lossR= BCE(tf.ones_like(d_real),  d_real)
+>    D_lossF= BCE(tf.zeros_like(d_fake), d_fake)    
+>    D_loss =  D_lossR + D_lossF 
+>    return G_loss, D_loss
 
 ----  
 ## LS GAN  
