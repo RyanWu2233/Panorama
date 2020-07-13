@@ -13,7 +13,7 @@
 > Ref: "Generative Adversarial Nets"  by Ian J. Goodfellow, Jean Pouget-Abadiey, Mehdi Mirza, Bing Xu, David Warde-Farley,
 Sherjil Ozairz, Aaron Courville, Yoshua Bengiox, 2014  
 
- 
+![GAN_loss](./Images/Loss_eq1.png)    
 
 
 ----  
