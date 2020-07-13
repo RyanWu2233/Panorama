@@ -4,12 +4,37 @@
 
 ----  
 ## Content 
-* [Vanilla GAN](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#gan-introduction)  
+* [Vanilla GAN](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Losses.md#vanilla-gan)  
 
 
 
 ----  
-## Vanilla GAN
+## Vanilla GAN  
+> Ref: "Generative Adversarial Nets"  by Ian J. Goodfellow, Jean Pouget-Abadiey, Mehdi Mirza, Bing Xu, David Warde-Farley,
+Sherjil Ozairz, Aaron Courville, Yoshua Bengiox, 2014  
+
+
+
+
+----  
+## LS GAN  
+
+----  
+## WGAN  
+
+
+----
+## WGAN GP
+
+
+----
+## DRAGAN  
+
+
+----
+## 
+
+
 
 
 
