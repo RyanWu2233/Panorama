@@ -37,9 +37,10 @@ Training GAN is a Min-Max game. It trains two networks simultaneously. Discrimin
 (3) Prevents from mode collapsion.  
 (4) Converge to the local minimum (instead of circleing around).  
 <details>
-  <summary>Click to expand! (Tensorflow code) </summary>
+  <summary>Click to expand TensorFlow code! </summary>
   
-  ## Heading
+  ## Saturation GAN (Vanilla GAN):
+  
   1. A numbered
   2. list
      * With some
