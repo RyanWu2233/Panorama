@@ -32,9 +32,15 @@ GAN (Generative Adversial Network) is well known for high quality image generati
 ----
 ## Loss function of GAN  
 2 Loss function: GAN->fGAN->WGAN->DRAGAN  
-<detail> 
- test
-<detail/> 
+<details>
+  <summary>Click to expand!</summary>
+  
+  ## Heading
+  1. A numbered
+  2. list
+     * With some
+     * Sub bullets
+</details> 
 
 ----  
 ## Gradient penalty  
