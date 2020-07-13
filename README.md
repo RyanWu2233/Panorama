@@ -55,4 +55,12 @@ TTUR, layer normalization, PGGAN
 EMA, Truncation, latent disentangle, minibatch-std, stochastic-variation
 conditional batch normalization, supervised learning
 
+----
+## Reference
+
+[1] "Generative Adversarial Nets"  by Ian J. Goodfellow, Jean Pouget-Abadiey, Mehdi Mirza, Bing Xu, David Warde-Farley,
+Sherjil Ozairz, Aaron Courville, Yoshua Bengiox, 2014  
+
+
+
 
