@@ -31,15 +31,22 @@ GAN (Generative Adversial Network) is well known for high quality image generati
 
 ----
 ## Loss function of GAN  
-2 Loss function: GAN->fGAN->WGAN->DRAGAN  
+Training GAN is a Min-Max game. It trains two networks simultaneously. Discriminator tends to maximum the loss while generator tends to minimum the loss. There are several kinds of loss function. Good loss function exhibit following properties: (Pg= generator distribution; Pd= reference data distribution)  
+(1) Find the direction toward Pd in the begining stage.  
+(2) Indicates the distance between Pg and Pd?.  
+(3) Prevents from mode collapsion.  
+(4) Converge to the local minimum (instead of circleing around).  
 <details>
-  <summary>Click to expand!</summary>
+  <summary>Click to expand! (Tensorflow code) </summary>
   
   ## Heading
   1. A numbered
   2. list
      * With some
      * Sub bullets
+     
+  2 Loss function: GAN->fGAN->WGAN->DRAGAN  
+
 </details> 
 
 ----  
