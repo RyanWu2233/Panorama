@@ -30,6 +30,15 @@ Sherjil Ozairz, Aaron Courville, Yoshua Bengiox, 2014
 >    D_loss =  D_lossR + D_lossF  
 >    return G_loss, D_loss  
 
+
+``` def GAN_loss(d_real, d_fake):   
+    BCE = tf.keras.losses.BinaryCrossentropy(from_logits= True)  
+    G_loss = BCE(tf.ones_like(d_fake),  d_fake)  
+    D_lossR= BCE(tf.ones_like(d_real),  d_real)  
+    D_lossF= BCE(tf.zeros_like(d_fake), d_fake)  
+    D_loss =  D_lossR + D_lossF  
+    return G_loss, D_loss  
+```
 ----  
 ## LS GAN  
 
