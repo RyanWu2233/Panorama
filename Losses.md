@@ -21,8 +21,8 @@ Sherjil Ozairz, Aaron Courville, Yoshua Bengiox, 2014
 
 ![GAN_loss_eq1](./Images/Loss_eq1.png)  
 
-![GAN_loss_eq2](./Images/Loss_eq2.png)  
-![GAN_loss_eq3](./Images/Loss_eq3.png)  
+![GAN_loss_eq2](./Images/Loss_eq2.jpg)  
+![GAN_loss_eq3](./Images/Loss_eq3.jpg)  
  
 
 TensorFlow code V2.1: 
