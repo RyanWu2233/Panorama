@@ -50,6 +50,9 @@ def GAN_loss(d_real, d_fake):
 > by Xudong Mao, Qing Liy1, Haoran Xiez, Raymond Y.K. Laux, Zhen Wang, and Stephen Paul Smolley, 2015  
 
 
+> ![GAN_loss_eq2](./Images/Loss_eq4.jpg)  
+
+
 TensorFlow code V2.1: 
 ``` TensorFlow
 def LSGAN_loss(d_real, d_fake):   
