@@ -18,12 +18,15 @@ At same time, G is trained to minimize the cost. In other words, D and G plat th
 ## Vanilla GAN  
 > Ref: "Generative Adversarial Nets"  by Ian J. Goodfellow, Jean Pouget-Abadiey, Mehdi Mirza, Bing Xu, David Warde-Farley,
 Sherjil Ozairz, Aaron Courville, Yoshua Bengiox, 2014  
-
+This original GAN paper provides proto-type loss definition from JS divergence.  
 ![GAN_loss_eq1](./Images/Loss_eq1.png)  
-
-![GAN_loss_eq2](./Images/Loss_eq2.jpg)  
-![GAN_loss_eq3](./Images/Loss_eq3.jpg)  
- 
+In real implementation, GAN uses two seperate loss function for discriminator (D) and generator (G) seperately.  
+D loss: ![GAN_loss_eq2](./Images/Loss_eq2.jpg)  
+G loss: ![GAN_loss_eq3](./Images/Loss_eq3.jpg)  
+The above definition is also called saturation loss. JS divergence exhibits two problem:  
+(1) It is constant when Pg and Pd is non-overlapped  
+(2) It is constant when Pg and Pd is fully overlapped  
+The first problem introduces 'gradient vanish' at beginning of training and makes GAN hard to convergence. The second roblem also introduces 'gradient vanish' at end of training and stops model training. To solve the problems, the author proposed Non-saturation GAN which uses log D(G(z)) to replace log(1 􀀀 D(G(z))). It does great help to make the convergence easier. However, it introduces another problem called 'mode collapse'.  
 
 TensorFlow code V2.1: 
 ``` TensorFlow
