@@ -11,13 +11,16 @@ At same time, G is trained to minimize the cost. In other words, D and G plat th
 ----  
 ## Content 
 * [Vanilla GAN](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Losses.md#vanilla-gan)  
+* [LS GAN](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Losses.md#vanilla-gan)  
+* [WGAN](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Losses.md#vanilla-gan)  
+* [WGAN-GP](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Losses.md#vanilla-gan)  
 
 
 
 ----  
 ## Vanilla GAN  
-> Ref: "Generative Adversarial Nets"  by Ian J. Goodfellow, Jean Pouget-Abadiey, Mehdi Mirza, Bing Xu, David Warde-Farley,
-Sherjil Ozairz, Aaron Courville, Yoshua Bengiox, 2014  
+> Ref: "Generative Adversarial Nets"  
+> by Ian J. Goodfellow, Jean Pouget-Abadiey, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozairz, Aaron Courville, Yoshua Bengiox, 2014  
 
 The original GAN paper provides proto-type GAN loss definition from JS divergence.  
 > ![GAN_loss_eq1](./Images/Loss_eq1.png)  
@@ -43,8 +46,8 @@ def GAN_loss(d_real, d_fake):
 ```
 ----  
 ## LS GAN  
-> Ref: "Least Squares Generative Adversarial Networks" by Xudong Mao, Qing Liy1, Haoran Xiez, Raymond Y.K. Laux,
-Zhen Wang, and Stephen Paul Smolley, 2015  
+> Ref: "Least Squares Generative Adversarial Networks"  
+> by Xudong Mao, Qing Liy1, Haoran Xiez, Raymond Y.K. Laux, Zhen Wang, and Stephen Paul Smolley, 2015  
 
 
 TensorFlow code V2.1: 
@@ -59,7 +62,8 @@ def LSGAN_loss(d_real, d_fake):
 
 ----  
 ## WGAN  
-> Ref: "Wasserstein GAN" by Martin Arjovsky, Soumith Chintala, and Leon Bottou, 2017  
+> Ref: "Wasserstein GAN" 
+> by Martin Arjovsky, Soumith Chintala, and Leon Bottou, 2017  
 
 
 ``` TensorFlow
@@ -72,6 +76,8 @@ def WGAN_loss(d_real, d_fake):
 
 ----
 ## WGAN GP
+> Ref: "Improved Training of Wasserstein GANs"
+> by Ishaan Gulrajani, Faruk Ahmed, Martin Arjovsky, Vincent Dumoulin, Aaron Courville, 2017  
 
 
 ----
