@@ -19,8 +19,9 @@ At same time, G is trained to minimize the cost. In other words, D and G plat th
 > Ref: "Generative Adversarial Nets"  by Ian J. Goodfellow, Jean Pouget-Abadiey, Mehdi Mirza, Bing Xu, David Warde-Farley,
 Sherjil Ozairz, Aaron Courville, Yoshua Bengiox, 2014  
 
-This original GAN paper provides proto-type loss definition from JS divergence.  
-![GAN_loss_eq1](./Images/Loss_eq1.png)  
+The original GAN paper provides proto-type GAN loss definition from JS divergence.  
+> ![GAN_loss_eq1](./Images/Loss_eq1.png)  
+
 In real implementation, GAN uses two seperate loss function for discriminator (D) and generator (G) seperately.  
 > D loss: ![GAN_loss_eq2](./Images/Loss_eq2.jpg)  
 > G loss: ![GAN_loss_eq3](./Images/Loss_eq3.jpg)  
@@ -42,10 +43,32 @@ def GAN_loss(d_real, d_fake):
 ```
 ----  
 ## LS GAN  
+> Ref: "Least Squares Generative Adversarial Networks" by Xudong Mao, Qing Liy1, Haoran Xiez, Raymond Y.K. Laux,
+Zhen Wang, and Stephen Paul Smolley, 2015  
+
+
+TensorFlow code V2.1: 
+``` TensorFlow
+def LSGAN_loss(d_real, d_fake):   
+    MSE = tf.keras.losses.MeanSquaredError()
+    G_loss = MSE(tf.ones_like(d_fake),  d_fake)
+    D_lossR= MSE(tf.ones_like(d_real),  d_real)
+    D_lossF= MSE(tf.zeros_like(d_fake), d_fake) 
+    D_loss = D_lossR + D_lossF
+```
 
 ----  
 ## WGAN  
+> Ref: "Wasserstein GAN" by Martin Arjovsky, Soumith Chintala, and Leon Bottou, 2017  
 
+
+``` TensorFlow
+def WGAN_loss(d_real, d_fake):   
+    G_loss = -tf.reduce_mean(d_fake)
+    D_lossR= -tf.reduce_mean(d_real)
+    D_lossF=  tf.reduce_mean(d_fake)
+    D_loss = D_lossR + D_lossF
+```
 
 ----
 ## WGAN GP
