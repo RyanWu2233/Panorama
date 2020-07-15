@@ -19,11 +19,13 @@ At same time, G is trained to minimize the cost. In other words, D and G plat th
 > Ref: "Generative Adversarial Nets"  by Ian J. Goodfellow, Jean Pouget-Abadiey, Mehdi Mirza, Bing Xu, David Warde-Farley,
 Sherjil Ozairz, Aaron Courville, Yoshua Bengiox, 2014  
 
-![GAN_loss](./Images/Loss_eq1.png)  
+![GAN_loss_eq1](./Images/Loss_eq1.png)  
 
+![GAN_loss_eq2](./Images/Loss_eq2.png)  
+![GAN_loss_eq3](./Images/Loss_eq3.png)  
  
 
-
+TensorFlow code V2.1: 
 ``` TensorFlow
 def GAN_loss(d_real, d_fake):   
     BCE = tf.keras.losses.BinaryCrossentropy(from_logits= True)  
