@@ -144,6 +144,18 @@ def HINGE2_loss(d_real,d_fake):                     #-- Hinge loss type 2
 > Ref "Which Training Methods for GANs do actually Converge?"
 > by Lars Mescheder, Andreas Geiger, Sebastian Nowozin,  2018
 
+This paper compare different GAN training schemes and loss function using Kinetics. 
+It shows that saturation loss and WGAN-GP could not converge to real data distribution.
+Non-saturating GAN can converge but take long time. 
+It also proposed R1 and R2 regularization (modification from WGAN-GP) which can converged well.  
+> ![R1REG_result](./Images/Img_R1REG_1.jpg)  
+
+The result is amazing and is then adopted in NVIDIA's famous style GAN2.  
+Training result:
+> ![R1REG_result](./Images/Img_R1REG_2.jpg)  
+> ![R1REG_result](./Images/Img_R1REG_3.jpg)  
+> ![R1REG_result](./Images/Img_R1REG_4.jpg)  
+> ![R1REG_result](./Images/Img_R1REG_5.jpg)  
 
 TensorFlow code V2.1 for R1 Regularization: 
 ``` TensorFlow
