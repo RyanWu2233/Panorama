@@ -48,10 +48,12 @@ def GAN_loss(d_real, d_fake):
 ## LS GAN  
 > Ref: "Least Squares Generative Adversarial Networks"  
 > by Xudong Mao, Qing Liy1, Haoran Xiez, Raymond Y.K. Laux, Zhen Wang, and Stephen Paul Smolley, 2015  
-
-
+The loss function of LSGAN is shown below. Unlike vanilla GAN, it tends to minimize the Pearson Chi-Square distance:  
 > ![GAN_loss_eq2](./Images/Loss_eq4.jpg)  
-
+Minimizing the objective function of regular GAN suffers from vanishing gradients, which makes it hard to update the generator. 
+LSGAN can relieve this problem because LSGAN penalizes samples based on their distances to the decision boundary. 
+The author also demonstrates that LSGAN is equivalent to minimize Peason Chi-Square distance and can Generate more realistic images.
+The benefit of LSGAN is good convergence behavior. The drawback of LSGAN is severe 'mode collapse' problem.
 
 TensorFlow code V2.1: 
 ``` TensorFlow
