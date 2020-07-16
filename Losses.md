@@ -48,8 +48,10 @@ def GAN_loss(d_real, d_fake):
 ## LS GAN  
 > Ref: "Least Squares Generative Adversarial Networks"  
 > by Xudong Mao, Qing Liy1, Haoran Xiez, Raymond Y.K. Laux, Zhen Wang, and Stephen Paul Smolley, 2015  
-The loss function of LSGAN is shown below. Unlike vanilla GAN, it tends to minimize the Pearson Chi-Square distance:  
+
+The loss function of LSGAN is shown below. Unlike vanilla GAN, it tends to minimize the Pearson Chi-Square distance instead of JS divergence.
 > ![GAN_loss_eq2](./Images/Loss_eq4.jpg)  
+
 Minimizing the objective function of regular GAN suffers from vanishing gradients, which makes it hard to update the generator. 
 LSGAN can relieve this problem because LSGAN penalizes samples based on their distances to the decision boundary. 
 The author also demonstrates that LSGAN is equivalent to minimize Peason Chi-Square distance and can Generate more realistic images.
@@ -84,6 +86,28 @@ def WGAN_loss(d_real, d_fake):
 > Ref: "Improved Training of Wasserstein GANs"
 > by Ishaan Gulrajani, Faruk Ahmed, Martin Arjovsky, Vincent Dumoulin, Aaron Courville, 2017  
 
+
+
+
+``` TensorFlow
+def WGAN_loss(d_real, d_fake, X_loss):   
+    G_loss = -tf.reduce_mean(d_fake)
+    D_lossR= -tf.reduce_mean(d_real)
+    D_lossF=  tf.reduce_mean(d_fake)
+    D_loss = D_lossR + D_lossF
+    D_loss = D_loss + Gradient_Penalty * X_loss
+    
+def WGAN_GP(real_img, fake_img):
+    epsilon = tf.random.uniform([real_img.shape[0],1,1,1], 0.0, 1.0) # Interpolation ratio
+    x_img   = epsilon * real_img + (1-epsilon) * fake_img
+    with tf.GradientTape() as X_tape:
+        X_tape.watch(x_img)
+        d_x    =   D(x_img, training = True)
+    X_grad = X_tape.gradient(d_x, x_img)
+    ddx    = tf.sqrt(tf.reduce_sum(x_grad ** 2, axis=[1,2,3]))
+    X_loss = tf.reduce_mean(ddx - 1.0) **2)
+    return X_loss
+```
 
 ----
 ## DRAGAN  
