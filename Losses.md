@@ -147,10 +147,14 @@ def HINGE2_loss(d_real,d_fake):                     #-- Hinge loss type 2
 This paper compare different GAN training schemes and loss function using Kinetics. 
 It shows that saturation loss and WGAN-GP could not converge to real data distribution.
 Non-saturating GAN can converge but take long time. 
-It also proposed R1 and R2 regularization (modification from WGAN-GP) which can converged well.  
+It also proposed R1 and R2 regularization (modification from WGAN-GP) which can converge very well.  
 > ![R1REG_result](./Images/Img_R1REG_1.jpg)  
 
-The result is amazing and is then adopted in NVIDIA's famous style GAN2.  
+The modification is simple and the result is amazing. NVIDIA's famous style GAN2 also use NSGAN + R1 regularization.  
+The differnce between R1 and R2 regularization relies on image source. 
+R1 regularization computes gradient penalty from  real image while
+R2 regularization computes gradient penalty from fake image. The performance is similar.  
+
 Training result:
 > ![R1REG_result](./Images/Img_R1REG_2.jpg)  
 > ![R1REG_result](./Images/Img_R1REG_3.jpg)  
