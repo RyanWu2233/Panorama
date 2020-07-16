@@ -114,13 +114,44 @@ def WGAN_GP(real_img, fake_img):
 ```
 
 ----
-## Hinge Loss  
+## Hinge Loss (from Geometric GAN) 
+> Ref ""  
+> by 
 
+
+TensorFlow code V2.1 for Hinge loss V1: 
+``` TensorFlow
+def HINGE1_loss(d_real,d_fake):                     #-- Hinge loss type 1 
+    G_loss =  tf.reduce_mean(tf.maximum(1 - d_fake , 0))
+    D_lossR=  tf.reduce_mean(tf.maximum(1 - d_real , 0))
+    D_lossF=  tf.reduce_mean(tf.maximum(1 + d_fake , 0))
+    D_loss = D_lossR + D_lossF
+    return G_loss, D_loss
+```
+
+TensorFlow code V2.1 for Hinge loss V2: 
+``` TensorFlow
+def HINGE2_loss(d_real,d_fake):                     #-- Hinge loss type 2
+    G_loss =  tf.reduce_mean(-d_fake)
+    D_lossR=  tf.reduce_mean(tf.maximum(1 - d_real , 0))
+    D_lossF=  tf.reduce_mean(tf.maximum(1 + d_fake , 0))
+    D_loss = D_lossR + D_lossF
+    return G_loss, D_loss
+```
 
 ----
 ## R1 Regularzation
 
 
-
-
+TensorFlow code V2.1 for R1 Regularization: 
+``` TensorFlow
+def R1_GP(r_img, f_img, D):
+    with tf.GradientTape() as X_tape:
+        X_tape.watch(r_img)                         # 
+        x_dout = D(r_img,training= True)       # 
+    X_grad = X_tape.gradient(x_dout, r_img)             # Gradient Dx
+    ddx    = tf.sqrt(tf.reduce_sum(X_grad ** 2, axis=[1,2,3]))
+    X_loss = tf.reduce_mean((ddx) ** 2)           # Gradient penality loss 
+    return X_loss
+```
 
