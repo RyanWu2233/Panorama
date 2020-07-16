@@ -34,6 +34,8 @@ The above definition is also called saturation loss. JS divergence exhibits two 
 (2) It is constant when Pg and Pd is fully overlapped  
 The first problem is 'gradient vanish' at beginning of training and makes GAN hard to convergence. The second problem is 'gradient vanish' at end of training stage and stops model training. To solve the problems, the author proposed Non-saturation GAN which uses log D(G(z)) to replace log(1 - D(G(z))). It does great help to make the convergence easier. However, it introduces another problem called 'mode collapse'.  
 
+> ![GAN_result](./Images/Img_GAN.jpg)  
+
 TensorFlow code V2.1: 
 ``` TensorFlow
 def GAN_loss(d_real, d_fake):   
@@ -56,6 +58,8 @@ Minimizing the objective function of regular GAN suffers from vanishing gradient
 LSGAN can relieve this problem because LSGAN penalizes samples based on their distances to the decision boundary. 
 The author also demonstrates that LSGAN is equivalent to minimize Peason Chi-Square distance and can Generate more realistic images.
 The benefit of LSGAN is good convergence behavior. The drawback of LSGAN is severe 'mode collapse' problem.
+
+> ![LSGAN_result](./Images/Img_LSGAN.jpg)  
 
 TensorFlow code V2.1: 
 ``` TensorFlow
