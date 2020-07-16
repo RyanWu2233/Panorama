@@ -73,7 +73,7 @@ def LSGAN_loss(d_real, d_fake):
 
 ----  
 ## WGAN  
-> Ref: "Wasserstein GAN" 
+> Ref: "Wasserstein GAN"  
 > by Martin Arjovsky, Soumith Chintala, and Leon Bottou, 2017  
 
 TensorFlow code V2.1 for WGAN: 
@@ -87,7 +87,7 @@ def WGAN_loss(d_real, d_fake):
 
 ----
 ## WGAN GP
-> Ref: "Improved Training of Wasserstein GANs"
+> Ref: "Improved Training of Wasserstein GANs"  
 > by Ishaan Gulrajani, Faruk Ahmed, Martin Arjovsky, Vincent Dumoulin, Aaron Courville, 2017  
 
 
@@ -141,8 +141,8 @@ def HINGE2_loss(d_real,d_fake):                     #-- Hinge loss type 2
 
 ----
 ## R1 Regularzation
-> Ref "Which Training Methods for GANs do actually Converge?"
-> by Lars Mescheder, Andreas Geiger, Sebastian Nowozin,  2018
+> Ref "Which Training Methods for GANs do actually Converge?"  
+> by Lars Mescheder, Andreas Geiger, Sebastian Nowozin,  2018  
 
 This paper compare different GAN training schemes and loss function using Kinetics. 
 It shows that saturation loss and WGAN-GP could not converge to real data distribution.
