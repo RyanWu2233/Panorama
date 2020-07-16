@@ -149,11 +149,11 @@ TensorFlow code V2.1 for R1 Regularization:
 ``` TensorFlow
 def R1_GP(r_img, f_img, D):
     with tf.GradientTape() as X_tape:
-        X_tape.watch(r_img)                         # 
-        x_dout = D(r_img,training= True)       # 
-    X_grad = X_tape.gradient(x_dout, r_img)             # Gradient Dx
+        X_tape.watch(r_img)  
+        x_dout = D(r_img,training= True)   
+    X_grad = X_tape.gradient(x_dout, r_img)   
     ddx    = tf.sqrt(tf.reduce_sum(X_grad ** 2, axis=[1,2,3]))
-    X_loss = tf.reduce_mean((ddx) ** 2)           # Gradient penality loss 
+    X_loss = tf.reduce_mean((ddx) ** 2)    
     return X_loss
 ```
 
