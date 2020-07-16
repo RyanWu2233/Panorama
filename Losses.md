@@ -36,7 +36,7 @@ The first problem is 'gradient vanish' at beginning of training and makes GAN ha
 
 > ![GAN_result](./Images/Img_GAN.jpg)  
 
-TensorFlow code V2.1: 
+TensorFlow code V2.1 for NSGAN: 
 ``` TensorFlow
 def GAN_loss(d_real, d_fake):   
     BCE = tf.keras.losses.BinaryCrossentropy(from_logits= True)  
@@ -61,7 +61,7 @@ The benefit of LSGAN is good convergence behavior. The drawback of LSGAN is seve
 
 > ![LSGAN_result](./Images/Img_LSGAN.jpg)  
 
-TensorFlow code V2.1: 
+TensorFlow code V2.1 for LSGAN: 
 ``` TensorFlow
 def LSGAN_loss(d_real, d_fake):   
     MSE = tf.keras.losses.MeanSquaredError()
@@ -76,7 +76,7 @@ def LSGAN_loss(d_real, d_fake):
 > Ref: "Wasserstein GAN" 
 > by Martin Arjovsky, Soumith Chintala, and Leon Bottou, 2017  
 
-
+TensorFlow code V2.1 for WGAN: 
 ``` TensorFlow
 def WGAN_loss(d_real, d_fake):   
     G_loss = -tf.reduce_mean(d_fake)
@@ -92,7 +92,7 @@ def WGAN_loss(d_real, d_fake):
 
 
 
-
+TensorFlow code V2.1 for WGAN-GP: 
 ``` TensorFlow
 def WGAN_loss(d_real, d_fake, X_loss):   
     G_loss = -tf.reduce_mean(d_fake)
