@@ -45,7 +45,7 @@ def GAN_loss(d_real, d_fake):
     return G_loss, D_loss  
 ```
 ----  
-## LS GAN  
+## LSGAN  
 > Ref: "Least Squares Generative Adversarial Networks"  
 > by Xudong Mao, Qing Liy1, Haoran Xiez, Raymond Y.K. Laux, Zhen Wang, and Stephen Paul Smolley, 2015  
 
@@ -110,11 +110,11 @@ def WGAN_GP(real_img, fake_img):
 ```
 
 ----
-## DRAGAN  
+## Hinge Loss  
 
 
 ----
-## 
+## R1 Regularzation
 
 
 
