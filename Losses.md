@@ -114,9 +114,9 @@ def WGAN_GP(real_img, fake_img):
 ```
 
 ----
-## Hinge Loss (from Geometric GAN) 
-> Ref ""  
-> by 
+## Hinge Loss (from Geometric GAN)  
+> Ref "Geometric GAN"  
+> by Jae Hyun Lim, Jong Chul Ye, 2017  
 
 
 TensorFlow code V2.1 for Hinge loss V1: 
@@ -141,6 +141,8 @@ def HINGE2_loss(d_real,d_fake):                     #-- Hinge loss type 2
 
 ----
 ## R1 Regularzation
+> Ref "Which Training Methods for GANs do actually Converge?"
+> by Lars Mescheder, Andreas Geiger, Sebastian Nowozin,  2018
 
 
 TensorFlow code V2.1 for R1 Regularization: 
