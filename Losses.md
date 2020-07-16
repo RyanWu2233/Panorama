@@ -15,7 +15,7 @@ At same time, G is trained to minimize the cost. In other words, D and G plat th
 * [WGAN](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Losses.md#wgan)  
 * [WGAN-GP](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Losses.md#wgan-gp)  
 * [Hinge loss](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Losses.md#hinge-loss-from-geometric-gan)
-* [R1 regularization]()
+* [R1 regularization](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Losses.md#r1-regularzation)
 
 ----  
 ## Vanilla GAN  
