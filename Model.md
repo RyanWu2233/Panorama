@@ -12,7 +12,8 @@
 ----  
 ## DCGAN
 > "Unsupervised representation learning with deep convolutional GAN"  
-> by Alec Radford & Luke Metz, Soumith Chintala, 2016
+> by Alec Radford & Luke Metz, Soumith Chintala, 2016  
+
 When Ian.Goodfellow first proposed GAN netowrk on 2014, everybody is exciting for it's elegant concept and capability. 
 But they soon found that GAN is quite difficult to train. 
 On 2016, DCGAN provides CNN based structure which is robust and easy to train. 
@@ -27,3 +28,12 @@ It is then mapping to 0~256 for image display purpose.
 Detail network for generator and discriminator are shown below:
  ![network_DCGAN](./Images/mdl_dcgan.jpg)  
  
+***Generator design tips:***
+> (1) Input of disc
+
+***Discriminator design tips:***
+> * Input should be normalized to [-1 ~ +1]
+> 
+
+
+
