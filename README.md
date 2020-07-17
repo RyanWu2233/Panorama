@@ -8,13 +8,15 @@ GAN (Generative Adversial Network) is well known for high quality image generati
 ----  
 ## Content
 * [GAN introduction](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#gan-introduction)  
+* [Loss function](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Losses.md)  
+
 * [Generator network](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#generator-network)  
 * [Discriminator network](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#discriminator-network)   
-* [Loss function](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Losses.md)  
 * [Gradient penalty](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#gradient-penalty)  
 * [Training tips](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#training-tips)  
 * [High quality images generation](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#high-quality-images-generation)   
 * [More result]  
+
 * [Reference]  
 
 ----  
@@ -45,9 +47,9 @@ conditional batch normalization, supervised learning
 
 ----
 ## Reference
-
-[1] "Generative Adversarial Nets"  by Ian J. Goodfellow, Jean Pouget-Abadiey, Mehdi Mirza, Bing Xu, David Warde-Farley,
-Sherjil Ozairz, Aaron Courville, Yoshua Bengiox, 2014  
+# Loss function:#  
+*Non-saturaing GAN* "Generative Adversarial Nets"  
+by Ian J. Goodfellow, Jean Pouget-Abadiey, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozairz, Aaron Courville, Yoshua Bengiox, 2014  
 
 
 
