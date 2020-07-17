@@ -29,11 +29,30 @@ Detail network for generator and discriminator are shown below:
  ![network_DCGAN](./Images/mdl_dcgan.jpg)  
  
 ***Generator design tips:***
-> (1) Input of disc
+*Noise vector*
+* Input noise vector should be distributed around unit sphere (vector norm ~ 1). 
+* Image interpolation should be computed along with unit sphere (not straight line).
+
+* Use batch normalization (otherwise, it would not converge)
+* Use Conv2DTranspose to upsample (kernel=(4,4), stride=2, 
+
+* Output image should be bounded to [-1 ~ +] by tanh function.
 
 ***Discriminator design tips:***
-> * Input should be normalized to [-1 ~ +1]
-> 
+
+* Input image should be normalized to [-1 ~ +1].
+* Real image and fake image should be classified separately.
+* Do not use batch normalization in discriminator. 
+* Use Conv2D to downsample (stride=2)
+
+
+
+
+
+
+
+
+
 
 
 
