@@ -10,7 +10,7 @@ GAN (Generative Adversial Network) is well known for high quality image generati
 * [GAN introduction](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#gan-introduction)  
 * [Generator network](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#generator-network)  
 * [Discriminator network](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#discriminator-network)   
-* [Loss function](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#loss-function-of-gan)  
+* [Loss function](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Losses.md)  
 * [Gradient penalty](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#gradient-penalty)  
 * [Training tips](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#training-tips)  
 * [High quality images generation](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#high-quality-images-generation)   
@@ -28,27 +28,7 @@ GAN (Generative Adversial Network) is well known for high quality image generati
 ----  
 ## Discriminator network  
 5 Discriminator network: GAN -> DCGAN -> Resnet  
-
-----
-## Loss function of GAN  
-Training GAN is a Min-Max game. It trains two networks simultaneously. Discriminator tends to maximum the loss while generator tends to minimum the loss. There are several kinds of loss function. Good loss function exhibit following properties: (Pg= generator distribution; Pd= reference data distribution)  
-(1) Find the direction toward Pd in the begining stage.  
-(2) Indicates the distance between Pg and Pd?.  
-(3) Prevents from mode collapsion.  
-(4) Converge to the local minimum (instead of circleing around).  
-<details>
-  <summary>Click to expand TensorFlow code! </summary>
-  
-  ## Saturation GAN (Vanilla GAN):
-  
-  1. A numbered
-  2. list
-     * With some
-     * Sub bullets
-     
-  2 Loss function: GAN->fGAN->WGAN->DRAGAN  
-
-</details> 
+ 
 
 ----  
 ## Gradient penalty  
