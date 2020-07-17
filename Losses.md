@@ -190,8 +190,8 @@ It also proposed R1 and R2 regularization (modification from WGAN-GP) which can 
 
 The modification is simple and the result is amazing. NVIDIA's famous style GAN2 also use NSGAN + R1 regularization.  
 The differnce between R1 and R2 regularization relies on image source. 
-R1 regularization computes gradient penalty from  real image while
-R2 regularization computes gradient penalty from fake image. The performance is similar.  
+R1 regularization computes gradient penalty from real image while
+R2 regularization computes gradient penalty from fake image. The performance difference between R1 and R2 is negligible.  
 
 Training results:
  ![R1REG_result](./Images/Img_R1REG_2.jpg)  
