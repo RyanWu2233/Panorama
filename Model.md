@@ -47,13 +47,13 @@ Detail network for generator and discriminator are shown below:
 **Input image**  
 * Input image should be normalized to [-1 ~ +1].  
 * Real image and fake image should be trained separately.  
-** for each stage**  
+**For each stage**  
 * Halves resolution and double fileter number for each stage.  
 * Do not use batch normalization in discriminator. 
 * Use Conv2D to downsample first (kernel=(4,4), stride=2, channels= f).  
 * Then, use another Conv2D to smooth (kernel=(3,3), stride=1, channels= 2f).  
 * Apply Leaky ReLU for after each Conv2D.  
-** Output stage**
+**Output stage**
 * Use Dense(1) to generate discriminator output
 
 
