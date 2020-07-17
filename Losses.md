@@ -23,7 +23,7 @@ At same time, G is trained to minimize the cost. In other words, D and G plat th
 > by Ian J. Goodfellow, Jean Pouget-Abadiey, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozairz, Aaron Courville, Yoshua Bengiox, 2014  
 
 The original GAN paper provides proto-type GAN loss definition from JS divergence.  
-![GAN_loss_eq1](./Images/Loss_eq1.png)  
+ ![GAN_loss_eq1](./Images/Loss_eq1.png)  
 
 In real implementation, GAN uses two seperate loss function for discriminator (D) and generator (G) seperately.  
  D loss: ![GAN_loss_eq2](./Images/Loss_eq2.jpg)  
@@ -34,7 +34,7 @@ The above definition is also called saturation loss. JS divergence exhibits two 
 (2) It is constant when Pg and Pd is fully overlapped  
 The first problem is 'gradient vanish' at beginning of training and makes GAN hard to convergence. The second problem is 'gradient vanish' at end of training stage and stops model training. To solve the problems, the author proposed Non-saturation GAN which uses log D(G(z)) to replace log(1 - D(G(z))). It does great help to make the convergence easier. However, it introduces another problem called 'mode collapse'.  
 
-![GAN_result](./Images/Img_GAN.jpg)  
+ ![GAN_result](./Images/Img_GAN.jpg)  
 
 TensorFlow code V2.1 for NSGAN: 
 ``` TensorFlow
@@ -52,14 +52,14 @@ def GAN_loss(d_real, d_fake):
 > by Xudong Mao, Qing Liy1, Haoran Xiez, Raymond Y.K. Laux, Zhen Wang, and Stephen Paul Smolley, 2015  
 
 The loss function of LSGAN is shown below. Unlike vanilla GAN, it tends to minimize the Pearson Chi-Square distance instead of JS divergence.
-![GAN_loss_eq2](./Images/Loss_eq4.jpg)  
+ ![GAN_loss_eq2](./Images/Loss_eq4.jpg)  
 
 Minimizing the objective function of regular GAN suffers from vanishing gradients, which makes it hard to update the generator. 
 LSGAN can relieve this problem because LSGAN penalizes samples based on their distances to the decision boundary. 
 The author also demonstrates that LSGAN is equivalent to minimize Peason Chi-Square distance and can Generate more realistic images.
 The benefit of LSGAN is good convergence behavior. The drawback of LSGAN is severe 'mode collapse' problem.
 
-![LSGAN_result](./Images/Img_LSGAN.jpg)  
+ ![LSGAN_result](./Images/Img_LSGAN.jpg)  
 
 TensorFlow code V2.1 for LSGAN: 
 ``` TensorFlow
@@ -80,20 +80,20 @@ This paper aims to solve the following problem: What does it mean to learn a pro
 It analysis vanilla GAN loss (JS divergence) and point out the problem of (1) hard to convege (2) training stop.
 Root cause is that GAN loss saturates at both beining and ending stages.
 The remedy is to use the EM distance (Earth Mover distance or Wasserstein distance) as distance metric:  
-![WGAN_result3](./Images/Img_WGAN_3.jpg)  
+ ![WGAN_result3](./Images/Img_WGAN_3.jpg)  
 Below plot shows that EM distance is linear at both left and right end. It guarantees the slope (gradient) for convergence.
 By using EM distance as loss function, GAN can find the correct gradient to minimize the distance between Pd and Pg. 
 Furthermore, the gradient is not zero when Pd is similar to Pg and training can continue go on.  
-![WGAN_result1](./Images/Img_WGAN_1.jpg)  
+ ![WGAN_result1](./Images/Img_WGAN_1.jpg)  
 
 EM distance, however, is computation-hunger. The author solved this problem by using Kantorovich-Rubinstein duality. 
 It can be estimated by solving following equation.
 Just in case that discriminator obeys 1-Lipschitz constraint and the loss function becomes:  
-![WGAN_result4](./Images/Img_WGAN_4.jpg)  
+ ![WGAN_result4](./Images/Img_WGAN_4.jpg)  
 
 The above equation looks similar to original vanilla GAN loss and is easier to compute. Quite simple and elegant. 
 Below simulation result shows that the generated image quality (IS score) improves as WGAN loss decrease.  
-![WGAN_result2](./Images/Img_WGAN_2.jpg)  
+ ![WGAN_result2](./Images/Img_WGAN_2.jpg)  
 
 TensorFlow code V2.1 for WGAN (with weight clipping): 
 ``` TensorFlow
@@ -113,19 +113,19 @@ rsmprop = RMSprop(clipvalue=1)   # Weight clipping
 WGAN paper significantly improves GAN training stability. However, the solution for 1-Lipschitz (say, weight clipping) introduces another problems.
 The first issue comes from how to choose clipping value properly. It is model dependent hyer-parameters and hard to choose when model becomes deeper. 
 Second issue is the model presentation capability is limited (distributed as dual-peaks). Third issue is quite slow training.  
-![WGAN_GP2](./Images/Img_WGAN_GP2.jpg)  
+ ![WGAN_GP2](./Images/Img_WGAN_GP2.jpg)  
 In this paper, author proposed using gradient penalty to replace weight clipping. 
 It dramastically solves the above three issues realted to weight clipping WGAN. The loss function now becomes:  
-![WGAN_GP7](./Images/Img_WGAN_GP7.jpg)  
+ ![WGAN_GP7](./Images/Img_WGAN_GP7.jpg)  
 
 WGAN-GP also reduces 'mode collapse' problem.  
-![WGAN_GP1](./Images/Img_WGAN_GP1.jpg)  
+ ![WGAN_GP1](./Images/Img_WGAN_GP1.jpg)  
 
 Training speed is much faster than WGAN also.  
-![WGAN_GP4](./Images/Img_WGAN_GP4.jpg)  
+ ![WGAN_GP4](./Images/Img_WGAN_GP4.jpg)  
 
-Even more simulation result from original paper:  
-![WGAN_GP3](./Images/Img_WGAN_GP3.jpg)  
+Even more simulation results from original paper:  
+ ![WGAN_GP3](./Images/Img_WGAN_GP3.jpg)  
 
 TensorFlow code V2.1 for WGAN-GP: 
 ``` TensorFlow
@@ -153,6 +153,9 @@ def WGAN_GP(real_img, fake_img):
 > Ref "Geometric GAN"  
 > by Jae Hyun Lim, Jong Chul Ye, 2017  
 
+This paper proposes another GAN loss definition (Hinge loss). The concept is derived from SVM (Support Vector Machine).
+Famous GAN paper like SNGAN (spectral normalization) and SAGAN (self attention) also use hinge loss as loss function.  
+ ![Hing1](./Images/Img_Hinge_1.jpg)  
 
 TensorFlow code V2.1 for Hinge loss V1: 
 ``` TensorFlow
@@ -183,18 +186,18 @@ This paper compare different GAN training schemes and loss function using Kineti
 It shows that saturation loss and WGAN-GP could not converge to real data distribution.
 Non-saturating GAN can converge but take long time. 
 It also proposed R1 and R2 regularization (modification from WGAN-GP) which can converge very well.  
-> ![R1REG_result](./Images/Img_R1REG_1.jpg)  
+ ![R1REG_result](./Images/Img_R1REG_1.jpg)  
 
 The modification is simple and the result is amazing. NVIDIA's famous style GAN2 also use NSGAN + R1 regularization.  
 The differnce between R1 and R2 regularization relies on image source. 
 R1 regularization computes gradient penalty from  real image while
 R2 regularization computes gradient penalty from fake image. The performance is similar.  
 
-Training result:
-> ![R1REG_result](./Images/Img_R1REG_2.jpg)  
-> ![R1REG_result](./Images/Img_R1REG_3.jpg)  
-> ![R1REG_result](./Images/Img_R1REG_4.jpg)  
-> ![R1REG_result](./Images/Img_R1REG_5.jpg)  
+Training results:
+ ![R1REG_result](./Images/Img_R1REG_2.jpg)  
+ ![R1REG_result](./Images/Img_R1REG_3.jpg)  
+ ![R1REG_result](./Images/Img_R1REG_4.jpg)  
+ ![R1REG_result](./Images/Img_R1REG_5.jpg)  
 
 TensorFlow code V2.1 for R1 Regularization: 
 ``` TensorFlow
