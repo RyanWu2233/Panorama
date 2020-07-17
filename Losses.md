@@ -23,18 +23,18 @@ At same time, G is trained to minimize the cost. In other words, D and G plat th
 > by Ian J. Goodfellow, Jean Pouget-Abadiey, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozairz, Aaron Courville, Yoshua Bengiox, 2014  
 
 The original GAN paper provides proto-type GAN loss definition from JS divergence.  
-> ![GAN_loss_eq1](./Images/Loss_eq1.png)  
+![GAN_loss_eq1](./Images/Loss_eq1.png)  
 
 In real implementation, GAN uses two seperate loss function for discriminator (D) and generator (G) seperately.  
-> D loss: ![GAN_loss_eq2](./Images/Loss_eq2.jpg)  
-> G loss: ![GAN_loss_eq3](./Images/Loss_eq3.jpg)  
+ D loss: ![GAN_loss_eq2](./Images/Loss_eq2.jpg)  
+ G loss: ![GAN_loss_eq3](./Images/Loss_eq3.jpg)  
 
 The above definition is also called saturation loss. JS divergence exhibits two problem:  
 (1) It is constant when Pg and Pd is non-overlapped  
 (2) It is constant when Pg and Pd is fully overlapped  
 The first problem is 'gradient vanish' at beginning of training and makes GAN hard to convergence. The second problem is 'gradient vanish' at end of training stage and stops model training. To solve the problems, the author proposed Non-saturation GAN which uses log D(G(z)) to replace log(1 - D(G(z))). It does great help to make the convergence easier. However, it introduces another problem called 'mode collapse'.  
 
-> ![GAN_result](./Images/Img_GAN.jpg)  
+![GAN_result](./Images/Img_GAN.jpg)  
 
 TensorFlow code V2.1 for NSGAN: 
 ``` TensorFlow
@@ -52,14 +52,14 @@ def GAN_loss(d_real, d_fake):
 > by Xudong Mao, Qing Liy1, Haoran Xiez, Raymond Y.K. Laux, Zhen Wang, and Stephen Paul Smolley, 2015  
 
 The loss function of LSGAN is shown below. Unlike vanilla GAN, it tends to minimize the Pearson Chi-Square distance instead of JS divergence.
-> ![GAN_loss_eq2](./Images/Loss_eq4.jpg)  
+![GAN_loss_eq2](./Images/Loss_eq4.jpg)  
 
 Minimizing the objective function of regular GAN suffers from vanishing gradients, which makes it hard to update the generator. 
 LSGAN can relieve this problem because LSGAN penalizes samples based on their distances to the decision boundary. 
 The author also demonstrates that LSGAN is equivalent to minimize Peason Chi-Square distance and can Generate more realistic images.
 The benefit of LSGAN is good convergence behavior. The drawback of LSGAN is severe 'mode collapse' problem.
 
-> ![LSGAN_result](./Images/Img_LSGAN.jpg)  
+![LSGAN_result](./Images/Img_LSGAN.jpg)  
 
 TensorFlow code V2.1 for LSGAN: 
 ``` TensorFlow
@@ -75,26 +75,25 @@ def LSGAN_loss(d_real, d_fake):
 ## WGAN  
 > Ref: "Wasserstein GAN"  
 > by Martin Arjovsky, Soumith Chintala, and Leon Bottou, 2017  
+
 This paper aims to solve the following problem: What does it mean to learn a probability distribution? 
 It analysis vanilla GAN loss (JS divergence) and point out the problem of (1) hard to convege (2) training stop.
 Root cause is that GAN loss saturates at both beining and ending stages.
 The remedy is to use the EM distance (Earth Mover distance or Wasserstein distance) as distance metric:
-> ![WGAN_result3](./Images/Img_WGAN_3.jpg)  
-
+![WGAN_result3](./Images/Img_WGAN_3.jpg)  
+Below plot shows that EM distance is linear at both left and right end. It guarantees the slope (gradient) for convergence.
 By using EM distance as loss function, GAN can find the correct gradient to minimize the distance between Pd and Pg. 
 Furthermore, the gradient is not zero when Pd is similar to Pg and training can continue go on.
-The problem of EM distance is heavy computation. The author proposed that this problem can be solved by Kantorovich-Rubinstein duality. 
+![WGAN_result1](./Images/Img_WGAN_1.jpg)  
+
+EM distance, however, is computation-hunger. The author solved this problem by using Kantorovich-Rubinstein duality. 
+It can be estimated by solving following equation.
 Just in case that discriminator obeys 1-Lipschitz constraint and the loss function becomes: 
-> ![WGAN_result4](./Images/Img_WGAN_4.jpg)  
+![WGAN_result4](./Images/Img_WGAN_4.jpg)  
 
 The above equation looks similar to original vanilla GAN loss and is easier to compute. Quite simple and elegant. 
 Below simulation result shows that the generated image quality (IS score) improves as WGAN loss decrease. 
-> ![WGAN_result1](./Images/Img_WGAN_1.jpg)  
-
-> ![WGAN_result2](./Images/Img_WGAN_2.jpg)  
-
-
-
+![WGAN_result2](./Images/Img_WGAN_2.jpg)  
 
 TensorFlow code V2.1 for WGAN: 
 ``` TensorFlow
