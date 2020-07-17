@@ -76,6 +76,14 @@ def LSGAN_loss(d_real, d_fake):
 > Ref: "Wasserstein GAN"  
 > by Martin Arjovsky, Soumith Chintala, and Leon Bottou, 2017  
 
+
+> ![WGAN_result1](./Images/Img_WGAN_1.jpg)  
+> ![WGAN_result2](./Images/Img_WGAN_2.jpg)  
+> ![WGAN_result3](./Images/Img_WGAN_3.jpg)  
+> ![WGAN_result4](./Images/Img_WGAN_4.jpg)  
+
+
+
 TensorFlow code V2.1 for WGAN: 
 ``` TensorFlow
 def WGAN_loss(d_real, d_fake):   
