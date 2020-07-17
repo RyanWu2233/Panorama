@@ -28,15 +28,20 @@ It is then mapping to 0~256 for image display purpose.
 Detail network for generator and discriminator are shown below:
  ![network_DCGAN](./Images/mdl_dcgan.jpg)  
  
-***Generator design tips:***
-*Noise vector*
+***Generator design tips:***  
+*Noise vector*  
 * Input noise vector should be distributed around unit sphere (vector norm ~ 1). 
 * Image interpolation should be computed along with unit sphere (not straight line).
-
-* Use batch normalization (otherwise, it would not converge)
-* Use Conv2DTranspose to upsample (kernel=(4,4), stride=2, 
-
-* Output image should be bounded to [-1 ~ +] by tanh function.
+*Header*  
+* Mapping to 4 x 4 resolution first.  
+*For each stage*  
+* Use Conv2DTranspose to upsample (kernel=(4,4), stride=2).  
+* Use batch normalization to ensure convergence.  
+* Use ReLU (LeakyReLU is even better).  
+* Double resolution and halves fileter number for each stage.  
+*Output stage*
+* Convert to RGB by Conv2D (kernel=(1,1) or (3,3), stride=2, channels=3).  
+* Output image should be bounded to [-1 ~ +] by tanh function.  
 
 ***Discriminator design tips:***
 
