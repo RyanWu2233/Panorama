@@ -3,6 +3,7 @@
 ----  
 ## Content
 * [DCGAN](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Model.md#dcgan)  
+* [Checkboard artifact]()
 * [Resnet]()  
 * [Self attention]()  
 * [Self modulate]()  
