@@ -10,13 +10,9 @@ GAN (Generative Adversial Network) is well known for high quality image generati
 * [GAN introduction](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#gan-introduction)  
 * [Loss function](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Losses.md)  
 
-* [Generator network](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#generator-network)  
-* [Discriminator network](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#discriminator-network)   
-* [Gradient penalty](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#gradient-penalty)  
-* [Training tips](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#training-tips)  
+* [Generator and discriminator network](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#generator-network)  
 * [High quality images generation](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#high-quality-images-generation)   
 * [More result]  
-
 * [Reference]  
 
 ----  
