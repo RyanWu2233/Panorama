@@ -29,6 +29,7 @@ Detail network for generator and discriminator are shown below:
  ![network_DCGAN](./Images/mdl_dcgan.jpg)  
  
 ***Generator design tips:***  
+
 **Noise vector**  
 * Input noise vector should be distributed around unit sphere (vector norm ~ 1). 
 * Image interpolation should be computed along with unit sphere (not straight line).  
@@ -43,7 +44,8 @@ Detail network for generator and discriminator are shown below:
 * Convert to RGB by Conv2D (kernel=(1,1) or (3,3), stride=2, channels=3).  
 * Output image should be bounded to [-1 ~ +] by tanh function.  
 
-***Discriminator design tips:***
+***Discriminator design tips:***  
+
 **Input image**  
 * Input image should be normalized to [-1 ~ +1].  
 * Real image and fake image should be trained separately.  
