@@ -1,5 +1,5 @@
 ## Main stream network for GAN ##  
-
+ 
 ----  
 ## Content
 * [DCGAN]()  
