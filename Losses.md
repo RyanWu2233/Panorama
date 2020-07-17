@@ -79,29 +79,30 @@ def LSGAN_loss(d_real, d_fake):
 This paper aims to solve the following problem: What does it mean to learn a probability distribution? 
 It analysis vanilla GAN loss (JS divergence) and point out the problem of (1) hard to convege (2) training stop.
 Root cause is that GAN loss saturates at both beining and ending stages.
-The remedy is to use the EM distance (Earth Mover distance or Wasserstein distance) as distance metric:
+The remedy is to use the EM distance (Earth Mover distance or Wasserstein distance) as distance metric:  
 ![WGAN_result3](./Images/Img_WGAN_3.jpg)  
 Below plot shows that EM distance is linear at both left and right end. It guarantees the slope (gradient) for convergence.
 By using EM distance as loss function, GAN can find the correct gradient to minimize the distance between Pd and Pg. 
-Furthermore, the gradient is not zero when Pd is similar to Pg and training can continue go on.
+Furthermore, the gradient is not zero when Pd is similar to Pg and training can continue go on.  
 ![WGAN_result1](./Images/Img_WGAN_1.jpg)  
 
 EM distance, however, is computation-hunger. The author solved this problem by using Kantorovich-Rubinstein duality. 
 It can be estimated by solving following equation.
-Just in case that discriminator obeys 1-Lipschitz constraint and the loss function becomes: 
+Just in case that discriminator obeys 1-Lipschitz constraint and the loss function becomes:  
 ![WGAN_result4](./Images/Img_WGAN_4.jpg)  
 
 The above equation looks similar to original vanilla GAN loss and is easier to compute. Quite simple and elegant. 
-Below simulation result shows that the generated image quality (IS score) improves as WGAN loss decrease. 
+Below simulation result shows that the generated image quality (IS score) improves as WGAN loss decrease.  
 ![WGAN_result2](./Images/Img_WGAN_2.jpg)  
 
-TensorFlow code V2.1 for WGAN: 
+TensorFlow code V2.1 for WGAN (with weight clipping): 
 ``` TensorFlow
 def WGAN_loss(d_real, d_fake):   
     G_loss = -tf.reduce_mean(d_fake)
     D_lossR= -tf.reduce_mean(d_real)
     D_lossF=  tf.reduce_mean(d_fake)
     D_loss = D_lossR + D_lossF
+rsmprop = RMSprop(clipvalue=1)   # Weight clipping
 ```
 
 ----
@@ -109,6 +110,14 @@ def WGAN_loss(d_real, d_fake):
 > Ref: "Improved Training of Wasserstein GANs"  
 > by Ishaan Gulrajani, Faruk Ahmed, Martin Arjovsky, Vincent Dumoulin, Aaron Courville, 2017  
 
+
+![WGAN_GP1](./Images/Img_WGAN_GP1.jpg)  
+![WGAN_GP2](./Images/Img_WGAN_GP2.jpg)  
+![WGAN_GP3](./Images/Img_WGAN_GP3.jpg)  
+![WGAN_GP4](./Images/Img_WGAN_GP4.jpg)  
+![WGAN_GP5](./Images/Img_WGAN_GP5.jpg)  
+![WGAN_GP6](./Images/Img_WGAN_GP6.jpg)  
+![WGAN_GP7](./Images/Img_WGAN_GP7.jpg)  
 
 
 TensorFlow code V2.1 for WGAN-GP: 
