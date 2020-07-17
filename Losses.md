@@ -109,21 +109,23 @@ rsmprop = RMSprop(clipvalue=1)   # Weight clipping
 ## WGAN GP
 > Ref: "Improved Training of Wasserstein GANs"  
 > by Ishaan Gulrajani, Faruk Ahmed, Martin Arjovsky, Vincent Dumoulin, Aaron Courville, 2017  
-WGAN paper indicates strong theory support for GAN training stability. However, the solution for 1-Lipschitz (say, weight clipping) introduces another problems.
+
+WGAN paper significantly improves GAN training stability. However, the solution for 1-Lipschitz (say, weight clipping) introduces another problems.
 The first issue comes from how to choose clipping value properly. It is model dependent hyer-parameters and hard to choose when model becomes deeper. 
 Second issue is the model presentation capability is limited (distributed as dual-peaks). Third issue is quite slow training.  
 ![WGAN_GP2](./Images/Img_WGAN_GP2.jpg)  
 In this paper, author proposed using gradient penalty to replace weight clipping. 
-It dramastically solve the above three issues realted to weight clipping WGAN. The loss function now becomes:
+It dramastically solves the above three issues realted to weight clipping WGAN. The loss function now becomes:  
 ![WGAN_GP7](./Images/Img_WGAN_GP7.jpg)  
-Below simulation result shows that it also improve the 'mode collapse' problem.
+
+WGAN-GP also reduces 'mode collapse' problem.  
 ![WGAN_GP1](./Images/Img_WGAN_GP1.jpg)  
 
-
-![WGAN_GP3](./Images/Img_WGAN_GP3.jpg)  
+Training speed is much faster than WGAN also.  
 ![WGAN_GP4](./Images/Img_WGAN_GP4.jpg)  
 
-
+Even more simulation result from original paper:  
+![WGAN_GP3](./Images/Img_WGAN_GP3.jpg)  
 
 TensorFlow code V2.1 for WGAN-GP: 
 ``` TensorFlow
