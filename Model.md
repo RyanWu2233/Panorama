@@ -1,8 +1,8 @@
-## Main stream network for GAN ##  
+## Main stream model network for GAN ##  
  
 ----  
 ## Content
-* [DCGAN]()  
+* [DCGAN](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Model.md#dcgan)  
 * [Resnet]()  
 * [Self attention]()  
 * [Self modulate]()  
