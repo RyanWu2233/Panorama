@@ -19,7 +19,7 @@ At same time, G is trained to minimize the cost. In other words, D and G plat th
 
 ----  
 ## Vanilla GAN  
-> R**["Generative Adversarial Nets"](https://arxiv.org/abs/1406.2661)  
+> **["Generative Adversarial Nets"](https://arxiv.org/abs/1406.2661)  
 > by Ian J. Goodfellow, Jean Pouget-Abadiey, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozairz, Aaron Courville, Yoshua Bengiox, 2014**  
 
 The original GAN paper provides proto-type GAN loss definition from JS divergence.  
