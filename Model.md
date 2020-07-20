@@ -95,13 +95,15 @@ SAGAN allows attention-driven, long-range dependency modeling for image generati
 Traditional CNN GANs use only spatially local points in lower-resolution feature maps. 
 In SAGAN, details can be generated using cues from all feature locations. 
 It performs better than prior work, boosting the best published (on 2017) Inception score from 36.8 to 52.52
-and reducing FID from 27.62 to 18.65 on challenging Imagenet dataset.
+and reducing FID from 27.62 to 18.65 on challenging Imagenet dataset.  
 
+The self attention layer reshapes input [H,W,C] into [HxW,C]. Then, it do matrix multiply as [HxW,C] x [C,HxW] to compute relation between each pixel.   
  ![SAGAN_0](./Images/sagan_0.jpg)  
+ Following image exhibits that attention layer can successfully link related pixel together.
  ![SAGAN_1](./Images/sagan_1.jpg)  
+ By introducing self attention mechanism, it achieves SOTA on 2017. Some results are:  
  ![SAGAN_2](./Images/sagan_2.jpg)  
  ![SAGAN_3](./Images/sagan_3.jpg)  
-
 
 ----  
 ## Self modulate  
