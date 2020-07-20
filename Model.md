@@ -1,4 +1,4 @@
-## Main stream model network for GAN ##  
+## Main stream GAN network ##  
  
 ----  
 ## Content
@@ -59,7 +59,16 @@ Detail network for generator and discriminator are shown below:
 **Output stage**
 * Use Dense(1) to generate discriminator output
 
+----  
+## Checkboard artifacts  
+> "Deconvolution and Checkerboard Artifacts"  
+> by Augustus Odena, Vincent Dumoulin, Chris Olah, 2017  
+> [Website](https://distill.pub/2016/deconv-checkerboard/)
 
+
+
+----
+## Resnet  
 
 
 
