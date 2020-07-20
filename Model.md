@@ -123,10 +123,10 @@ It would 'mix' the style between real and fake image batch and lower the percept
 The original spectral normalization paper uses conditional batch norm in their generator model. 
 hile this greatly improves the quality of the generated samples, this model is no longer fully unsupervised. 
 Chen et al. have recently proposed a new type of layer that allows intermediate feature maps to be modulated by the input noise vector instead of labels.  
-![Self_modulation_2](./Images/self_mod_2.jpg)  
+![Self_modulation_2](./Images/self_mod2.jpg)  
 
 Self modulation network implementation:  
-![Self_modulation_1](./Images/self_mod_1.jpg)  
+![Self_modulation_1](./Images/self_mod1.jpg)  
 
 ----
 ## Style GAN  
@@ -138,14 +138,14 @@ Self modulation network implementation:
 The successful story for CBN (conditional batch normalization) and self modulation indicate a broad way. 
 NVIDIA further expands this idea to image translation (SPADE, GAUGAN) and unsupervised GAN (Style GAN). 
 The style gan network are shown below:  
-![Style_gan_1](./Images/style_gan_1.jpg)  
+![Style_gan_1](./Images/style_gan1.jpg)  
 
 Generator of style GAN is comprised of 2 network. Mapping network (Gm) maps the spherical symmetric Gaussian distribution space Z into disentangled space W. 
 Then, W tensor control style of each resolution by style layer.  
-![Style_gan_3](./Images/style_gan_3.jpg)  
+![Style_gan_3](./Images/style_gan3.jpg)  
 
 The generated images are shown below. It's incredible and amazing:
-![Style_gan_2](./Images/style_gan_2.jpg)  
+![Style_gan_2](./Images/style_gan2.jpg)  
 
 
 
