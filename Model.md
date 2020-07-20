@@ -63,8 +63,11 @@ Detail network for generator and discriminator are shown below:
 ## Checkboard artifacts  
 > "Deconvolution and Checkerboard Artifacts"  
 > by Augustus Odena, Vincent Dumoulin, Chris Olah, 2017  
-> [Website](https://distill.pub/2016/deconv-checkerboard/)
+> [Website](https://distill.pub/2016/deconv-checkerboard/)  
 
+ ![Checkboard_effect_0](./Images/Checkboard_eff0.jpg)  
+ ![Checkboard_effect_1](./Images/Checkboard_eff1.jpg)  
+ ![Checkboard_effect_2](./Images/Checkboard_eff2.jpg)  
 
 
 ----
