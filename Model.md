@@ -12,7 +12,7 @@
 
 ----  
 ## DCGAN
-> "**Unsupervised representation learning with deep convolutional GAN**"  
+> **["Unsupervised representation learning with deep convolutional GAN"](https://arxiv.org/abs/1511.06434)  
 > **by Alec Radford & Luke Metz, Soumith Chintala, 2016**  
 
 When Ian.Goodfellow first proposed GAN netowrk on 2014, everybody is exciting for it's elegant concept and capability. 
@@ -61,8 +61,8 @@ Detail network for generator and discriminator are shown below:
 
 ----  
 ## Checkboard artifacts  
-> **"Deconvolution and Checkerboard Artifacts"  
-> by Augustus Odena, Vincent Dumoulin, Chris Olah, 2017** [Website](https://distill.pub/2016/deconv-checkerboard/)  
+> **["Deconvolution and Checkerboard Artifacts"](https://distill.pub/2016/deconv-checkerboard/)  
+> by Augustus Odena, Vincent Dumoulin, Chris Olah, 2017**  
 
 The standard approach of producing images with deconvolution — despite its successes! — has some conceptually simple issues that lead to artifacts in produced images. Conv2D and Conv2DTranspose with stride = 2 generates periodic noise pattern (n=2 for last layer, n=4 for last two layer). Using a natural alternative without these issues causes the artifacts to go away (Analogous arguments suggest that standard strided convolutional layers may also have issues):  
 * The upsample Conv2DTranspose(stride=2) layer is replaced by UpSample2D(2) + Conv2D(stride=1)  
@@ -77,9 +77,9 @@ The standard approach of producing images with deconvolution — despite its
 
 ----
 ## Resnet  
-> **"Deep Residual Learning for Image Recognition"  
+> **["Deep Residual Learning for Image Recognition"](https://arxiv.org/abs/1512.03385)  
 > by Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun, 2015  
-> "Identity Mappings in Deep Residual Networks"  
+> ["Identity Mappings in Deep Residual Networks"](https://arxiv.org/abs/1603.05027)  
 > by Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun, 2016**
 
 Resnet is proposed by He. for Imagnet classification job on 2015. It soon proves that Resnet performs well even in GAN image generation. Famous GAN architecture like SAGAN, SNGAN used Resnet architecture to improve image quality. NVIDIA Style GAN2 claims that by using Resnet for discriminator and skip-connection for generator achieves best image quality. Detail resnet architecture is shown below. Notice that resnet has several different type. Demoed one comes from NVIDIA style GAN2.  
@@ -88,9 +88,9 @@ Resnet is proposed by He. for Imagnet classification job on 2015. It soon proves
  
 ----
 ## Self attention  (SAGAN)
-> **"Non-local Neural Networks"  
+> **["Non-local Neural Networks"](https://arxiv.org/abs/1711.07971)  
 > by Xiaolong Wang, Ross Girshick, Abhinav Gupta1, Kaiming He, 2017  
-> "Self-Attention Generative Adversarial Networks"  
+> ["Self-Attention Generative Adversarial Networks"](https://arxiv.org/abs/1805.08318)  
 > by Han Zhang, Ian Goodfellow, Dimitris Metaxas, Augustus Odena, 2017**  
 
 SAGAN allows attention-driven, long-range dependency modeling for image generation tasks. 
@@ -109,9 +109,9 @@ The self attention layer reshapes input [H,W,C] into [HxW,C]. Then, it do matrix
 
 ----  
 ## Self modulate  
-> **"Perceptual Losses for Real-Time Style Transfer and Super-Resolution"  
+> **["Perceptual Losses for Real-Time Style Transfer and Super-Resolution"](https://arxiv.org/abs/1603.08155)  
 > by Justin Johnson, Alexandre Alahi, Li Fei-Fei, 2016  
-> "On self modulation for generative adversarial networks"  
+> ["On self modulation for generative adversarial networks"](https://openreview.net/pdf?id=Hkl5aoR5tm)  
 > by Ting Chen, Mario Lucic, Neil Houlsby, Sylvain Gelly by 2017**  
 
 GAN can easily generate good quality images for low-to-middle resolution (up to 128 x 128). 
