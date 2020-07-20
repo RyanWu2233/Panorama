@@ -62,9 +62,14 @@ Detail network for generator and discriminator are shown below:
 ----  
 ## Checkboard artifacts  
 > "Deconvolution and Checkerboard Artifacts"  
-> by Augustus Odena, Vincent Dumoulin, Chris Olah, 2017  
-> [Website](https://distill.pub/2016/deconv-checkerboard/)  
+> by Augustus Odena, Vincent Dumoulin, Chris Olah, 2017 [Website](https://distill.pub/2016/deconv-checkerboard/)  
 
+The standard approach of producing images with deconvolution — despite its successes! — has some conceptually simple issues that lead to artifacts in produced images. Conv2D and Conv2DTranspose with stride = 2 generates periodic noise pattern (n=2 for last layer, n=4 for last two layer). Using a natural alternative without these issues causes the artifacts to go away (Analogous arguments suggest that standard strided convolutional layers may also have issues). 
+
+ ![Checkboard architecture](./Images/Checkboard_eff3.jpg)  
+
+
+*Checkboard effect example*
  ![Checkboard_effect_0](./Images/Checkboard_eff0.jpg)  
  ![Checkboard_effect_1](./Images/Checkboard_eff1.jpg)  
  ![Checkboard_effect_2](./Images/Checkboard_eff2.jpg)  
