@@ -78,7 +78,12 @@ The standard approach of producing images with deconvolution — despite its
 ----
 ## Resnet  
 
-
+ ![Resnet_generator](./Images/Resnet_g.jpg)  
+ ![Resnet_discriminator](./Images/Resnet_d.jpg)  
+ 
+ 
+ 
+ 
 
 
 
