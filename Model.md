@@ -4,10 +4,10 @@
 ## Content
 * [DCGAN](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Model.md#dcgan)  
 * [Checkboard artifact](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Model.md#checkboard-artifacts)
-* [Resnet]()  
-* [Self attention]()  
-* [Self modulate]()  
-* [Style GAN]()  
+* [Resnet](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Model.md#resnet)  
+* [Self attention](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Model.md#self-attention)  
+* [Self modulate](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Model.md#self-modulate)  
+* [Style GAN](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Model.md#style-gan)  
 
 
 ----  
