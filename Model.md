@@ -88,6 +88,8 @@ Resnet is proposed by He. for Imagnet classification job on 2015. It soon proves
  
 ----
 ## Self attention  (SAGAN)
+> "Non-local Neural Networks"  
+> by Xiaolong Wang, Ross Girshick, Abhinav Gupta1, Kaiming He, 2017  
 > "Self-Attention Generative Adversarial Networks"
 > by Han Zhang, Ian Goodfellow, Dimitris Metaxas, Augustus Odena, 2017
 
