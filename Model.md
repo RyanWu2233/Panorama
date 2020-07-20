@@ -13,7 +13,7 @@
 ----  
 ## DCGAN
 > **["Unsupervised representation learning with deep convolutional GAN"](https://arxiv.org/abs/1511.06434)  
-> **by Alec Radford & Luke Metz, Soumith Chintala, 2016**  
+> by Alec Radford & Luke Metz, Soumith Chintala, 2016**  
 
 When Ian.Goodfellow first proposed GAN netowrk on 2014, everybody is exciting for it's elegant concept and capability. 
 But they soon found that GAN is quite difficult to train. 
