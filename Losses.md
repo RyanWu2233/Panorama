@@ -19,8 +19,8 @@ At same time, G is trained to minimize the cost. In other words, D and G plat th
 
 ----  
 ## Vanilla GAN  
-> Ref: "Generative Adversarial Nets"  
-> by Ian J. Goodfellow, Jean Pouget-Abadiey, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozairz, Aaron Courville, Yoshua Bengiox, 2014  
+> R**["Generative Adversarial Nets"](https://arxiv.org/abs/1406.2661)  
+> by Ian J. Goodfellow, Jean Pouget-Abadiey, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozairz, Aaron Courville, Yoshua Bengiox, 2014**  
 
 The original GAN paper provides proto-type GAN loss definition from JS divergence.  
  ![GAN_loss_eq1](./Images/Loss_eq1.png)  
@@ -48,8 +48,8 @@ def GAN_loss(d_real, d_fake):
 ```
 ----  
 ## LSGAN  
-> Ref: "Least Squares Generative Adversarial Networks"  
-> by Xudong Mao, Qing Liy1, Haoran Xiez, Raymond Y.K. Laux, Zhen Wang, and Stephen Paul Smolley, 2015  
+> **["Least Squares Generative Adversarial Networks"](https://arxiv.org/abs/1611.04076)  
+> by Xudong Mao, Qing Liy1, Haoran Xiez, Raymond Y.K. Laux, Zhen Wang, and Stephen Paul Smolley, 2015**  
 
 The loss function of LSGAN is shown below. Unlike vanilla GAN, it tends to minimize the Pearson Chi-Square distance instead of JS divergence.
  ![GAN_loss_eq2](./Images/Loss_eq4.jpg)  
@@ -73,8 +73,8 @@ def LSGAN_loss(d_real, d_fake):
 
 ----  
 ## WGAN  
-> Ref: "Wasserstein GAN"  
-> by Martin Arjovsky, Soumith Chintala, and Leon Bottou, 2017  
+> **["Wasserstein GAN"](https://arxiv.org/abs/1701.07875)  
+> by Martin Arjovsky, Soumith Chintala, and Leon Bottou, 2017**  
 
 This paper aims to solve the following problem: What does it mean to learn a probability distribution? 
 It analysis vanilla GAN loss (JS divergence) and point out the problem of (1) hard to convege (2) training stop.
@@ -107,8 +107,8 @@ rsmprop = RMSprop(clipvalue=1)   # Weight clipping
 
 ----
 ## WGAN GP
-> Ref: "Improved Training of Wasserstein GANs"  
-> by Ishaan Gulrajani, Faruk Ahmed, Martin Arjovsky, Vincent Dumoulin, Aaron Courville, 2017  
+> **["Improved Training of Wasserstein GANs"](https://arxiv.org/pdf/1704.00028.pdf)  
+> by Ishaan Gulrajani, Faruk Ahmed, Martin Arjovsky, Vincent Dumoulin, Aaron Courville, 2017**  
 
 WGAN paper significantly improves GAN training stability. However, the solution for 1-Lipschitz (say, weight clipping) introduces another problems.
 The first issue comes from how to choose clipping value properly. It is model dependent hyer-parameters and hard to choose when model becomes deeper. 
@@ -150,8 +150,8 @@ def WGAN_GP(real_img, fake_img):
 
 ----
 ## Hinge Loss (from Geometric GAN)  
-> Ref "Geometric GAN"  
-> by Jae Hyun Lim, Jong Chul Ye, 2017  
+> **["Geometric GAN"](https://arxiv.org/abs/1705.02894)  
+> by Jae Hyun Lim, Jong Chul Ye, 2017**  
 
 This paper proposes another GAN loss definition (Hinge loss). The concept is derived from SVM (Support Vector Machine).
 Famous GAN paper like SNGAN (spectral normalization) and SAGAN (self attention) also use hinge loss as loss function.  
@@ -179,8 +179,8 @@ def HINGE2_loss(d_real,d_fake):                     #-- Hinge loss type 2
 
 ----
 ## R1 Regularzation
-> Ref "Which Training Methods for GANs do actually Converge?"  
-> by Lars Mescheder, Andreas Geiger, Sebastian Nowozin,  2018  
+> **["Which Training Methods for GANs do actually Converge?"](https://arxiv.org/abs/1801.04406)  
+> by Lars Mescheder, Andreas Geiger, Sebastian Nowozin,  2018**  
 
 This paper compare different GAN training schemes and loss function using Kinetics. 
 It shows that saturation loss and WGAN-GP could not converge to real data distribution.
