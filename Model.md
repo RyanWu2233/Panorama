@@ -109,18 +109,43 @@ The self attention layer reshapes input [H,W,C] into [HxW,C]. Then, it do matrix
 
 ----  
 ## Self modulate  
+> "Perceptual Losses for Real-Time Style Transfer and Super-Resolution"  
+> by Justin Johnson, Alexandre Alahi, Li Fei-Fei, 2016
+> "On self modulation for generative adversarial networks"  
+> by Ting Chen, Mario Lucic, Neil Houlsby, Sylvain Gelly by 2017  
 
+GAN can easily generate good quality images for low-to-middle resolution (up to 128 x 128). 
+But it is quite difficult to generate high resolution images (up to 512 x 512, or higher). 
+The great success fof style-transfer implies that human perceptual is related to statistics of convolution layer output (mean and variation). 
+Batch normalization layer is just used to adjust the mean and variation. 
+Therefore, always remember not to train real images and fake images simultaneously. 
+It would 'mix' the style between real and fake image batch and lower the perceptual quality.  
+The original spectral normalization paper uses conditional batch norm in their generator model. 
+hile this greatly improves the quality of the generated samples, this model is no longer fully unsupervised. 
+Chen et al. have recently proposed a new type of layer that allows intermediate feature maps to be modulated by the input noise vector instead of labels.  
+![Self_modulation_2](./Images/self_mod_2.jpg)  
+
+Self modulation network implementation:  
+![Self_modulation_1](./Images/self_mod_1.jpg)  
 
 ----
 ## Style GAN  
+> "A Style-Based Generator Architecture for Generative Adversarial Networks"  
+> by Tero Karras, Samuli Laine, Timo Aila, 2018  
+> "Semantic Image Synthesis with Spatially-Adaptive Normalization"  
+> by Taesung Park, Ming-Yu Liu, Ting-Chun Wang, Jun-Yan Zhu, 2018
 
+The successful story for CBN (conditional batch normalization) and self modulation indicate a broad way. 
+NVIDIA further expands this idea to image translation (SPADE, GAUGAN) and unsupervised GAN (Style GAN). 
+The style gan network are shown below:  
+![Style_gan_1](./Images/style_gan_1.jpg)  
 
+Generator of style GAN is comprised of 2 network. Mapping network (Gm) maps the spherical symmetric Gaussian distribution space Z into disentangled space W. 
+Then, W tensor control style of each resolution by style layer.  
+![Style_gan_3](./Images/style_gan_3.jpg)  
 
- 
- 
-
-
-
+The generated images are shown below. It's incredible and amazing:
+![Style_gan_2](./Images/style_gan_2.jpg)  
 
 
 
