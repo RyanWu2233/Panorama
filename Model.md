@@ -77,11 +77,28 @@ The standard approach of producing images with deconvolution — despite its
 
 ----
 ## Resnet  
+> "Deep Residual Learning for Image Recognition"  
+> by Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun, 2015  
+> "Identity Mappings in Deep Residual Networks"  
+> by Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun, 2016
 
+Resnet is proposed by He. for Imagnet classification job on 2015. It soon proves that Resnet performs well even in GAN image generation. Famous GAN architecture like SAGAN, SNGAN used Resnet architecture to improve image quality. NVIDIA Style GAN2 claims that by using Resnet for discriminator and skip-connection for generator achieves best image quality. Detail resnet architecture is shown below. Notice that resnet has several different type. Demoed one comes from NVIDIA style GAN2.  
  ![Resnet_generator](./Images/Resnet_g.jpg)  
  ![Resnet_discriminator](./Images/Resnet_d.jpg)  
  
- 
+----
+## Self attention  
+
+
+----  
+## Self modulate  
+
+
+----
+## Style GAN  
+
+
+
  
  
 
