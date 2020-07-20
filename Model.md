@@ -87,7 +87,20 @@ Resnet is proposed by He. for Imagnet classification job on 2015. It soon proves
  ![Resnet_discriminator](./Images/resnet_d.jpg)  
  
 ----
-## Self attention  
+## Self attention  (SAGAN)
+> "Self-Attention Generative Adversarial Networks"
+> by Han Zhang, Ian Goodfellow, Dimitris Metaxas, Augustus Odena, 2017
+
+SAGAN allows attention-driven, long-range dependency modeling for image generation tasks. 
+Traditional CNN GANs use only spatially local points in lower-resolution feature maps. 
+In SAGAN, details can be generated using cues from all feature locations. 
+It performs better than prior work, boosting the best published (on 2017) Inception score from 36.8 to 52.52
+and reducing FID from 27.62 to 18.65 on challenging Imagenet dataset.
+
+ ![SAGAN_0](./Images/sagan_0.jpg)  
+ ![SAGAN_1](./Images/sagan_1.jpg)  
+ ![SAGAN_2](./Images/sagan_2.jpg)  
+ ![SAGAN_3](./Images/sagan_3.jpg)  
 
 
 ----  
