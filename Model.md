@@ -130,9 +130,9 @@ Self modulation network implementation:
 
 ----
 ## Style GAN  
-> **"A Style-Based Generator Architecture for Generative Adversarial Networks"  
+> **["A Style-Based Generator Architecture for Generative Adversarial Networks"](https://arxiv.org/abs/1812.04948)  
 > by Tero Karras, Samuli Laine, Timo Aila, 2018  
-> "Semantic Image Synthesis with Spatially-Adaptive Normalization"  
+> ["Semantic Image Synthesis with Spatially-Adaptive Normalization"](https://arxiv.org/abs/1903.07291)  
 > by Taesung Park, Ming-Yu Liu, Ting-Chun Wang, Jun-Yan Zhu, 2018**  
 > 
 > [Code for Style GAN2 on FFHQ generation](https://github.com/RyanWu2233/Style_GAN2_FFHQ)  
