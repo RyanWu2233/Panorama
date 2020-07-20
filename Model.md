@@ -84,7 +84,7 @@ The standard approach of producing images with deconvolution — despite its
 
 Resnet is proposed by He. for Imagnet classification job on 2015. It soon proves that Resnet performs well even in GAN image generation. Famous GAN architecture like SAGAN, SNGAN used Resnet architecture to improve image quality. NVIDIA Style GAN2 claims that by using Resnet for discriminator and skip-connection for generator achieves best image quality. Detail resnet architecture is shown below. Notice that resnet has several different type. Demoed one comes from NVIDIA style GAN2.  
  ![Resnet_generator](./Images/Resnet_g.jpg)  
- ![Resnet_discriminator](./Images/Resnet_d.jpg)  
+ ![Resnet_discriminator](./Images/resnet_d.jpg)  
  
 ----
 ## Self attention  
