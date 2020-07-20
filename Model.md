@@ -134,6 +134,9 @@ Self modulation network implementation:
 > by Tero Karras, Samuli Laine, Timo Aila, 2018  
 > "Semantic Image Synthesis with Spatially-Adaptive Normalization"  
 > by Taesung Park, Ming-Yu Liu, Ting-Chun Wang, Jun-Yan Zhu, 2018
+> 
+> [Code for Style GAN2 on FFHQ generation](https://github.com/RyanWu2233/Style_GAN2_FFHQ)  
+> [Code for Style GAN2 on Waifu generation](https://github.com/RyanWu2233/Style_GAN2_TWDNE)  
 
 The successful story for CBN (conditional batch normalization) and self modulation indicate a broad way. 
 NVIDIA further expands this idea to image translation (SPADE, GAUGAN) and unsupervised GAN (Style GAN). 
