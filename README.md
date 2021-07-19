@@ -29,7 +29,8 @@
 ![Image_05](./JPG/PANO_05.jpg)
 
 ----
-## A
+## Head-to-tail connection, cropping
+![Image_11](./JPG/PANO_11.jpg)
 ![Image_10](./JPG/PANO_10.jpg)
 
 ----
