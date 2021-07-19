@@ -1,29 +1,40 @@
-## Unsupervised human face generation using TensorFlow 2.1  
-![Python 3.7](https://img.shields.io/badge/python-3.7-green.svg?style=plastic)
-![TensorFlow 2.10](https://img.shields.io/badge/tensorflow-2.10-green.svg?style=plastic)
-![Repo celeba](https://img.shields.io/badge/Repository-CelebA-green.svg?style=plastic)
-![Image size 128](https://img.shields.io/badge/Image_size-128x128-green.svg?style=plastic)  
-GAN (Generative Adversial Network) is well known for high quality image generation. This project use different kind of GAN to produce 128 x 128 images using [CelebA](https://github.com/RyanWu2233/SAGAN_CelebA/tree/master/CelebA) repository. Detail analysis is made for different generator/ discriminator network architecture, and loss function and gradient penalty selection. Famous GAN architecture are shortly introduced, including: GAN, LSGAN, FGAN, WGAN, WGAN-GP, RSGAN, DRAGAN, SNGAN, SAGAN, Self-mod, PGGAN, Style GAN, and Style GAN2.  
-
-----  
-## Content
-* [GAN introduction](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#gan-introduction)  
-* [Loss function](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/Losses.md)  
-
-* [Generator and discriminator network](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#generator-network)  
-* [High quality images generation](https://github.com/RyanWu2233/SAGAN_CelebA/blob/master/README.md#high-quality-images-generation)   
-* [More result]  
-
-----  
-## GAN introduction
+## Panorama
+![Python 3.7](https://img.shields.io/badge/python-3.7-green.svg?style=plastic) 
 
 
-----  
-## High quality images generation
-EMA, Truncation, latent disentangle, minibatch-std, stochastic-variation
-conditional batch normalization, supervised learning
 
+----
+## Image stitching
 
+![Image_00](./JPG/PANO_00.jpg)  
+
+----
+## Image projection
+![Image_01](./JPG/PANO_01.jpg)
+
+----
+## Find descriptors
+![Image_02](./JPG/PANO_02.jpg)  
+
+----
+## Image translation, rotation, scaling and stitching
+![Image_03](./JPG/PANO_03.jpg)  
+
+----
+## Blending
+![Image_04](./JPG/PANO_04.jpg)
+
+----
+## Intensity equalization
+![Image_05](./JPG/PANO_05.jpg)
+
+----
+## Final Example
+![Image_06](./JPG/PANO_06.jpg)
+
+----
+## Another example
+![Image_07](./JPG/PANO_07.jpg)   
 
 
 
